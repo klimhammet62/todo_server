@@ -41,7 +41,7 @@ const addTodo = (id, title, completed, subtasks = []) => {
 }
 
 const addSubtask = (params) => {
-/*     console.log(params.subtasks.at(-1).index.toString().split('.')[1]);
+/*     console.log(params.subtasks.at(-1).index.toString().split('.')[1]);asd
  */    console.log((1.10).toFixed(2));
 /*     console.log((parseFloat(params.subtasks.at(-1).index.toString().split('.')[1]) + 1));
  */    let index = params.subtasks.length ? params.index + '.' + (parseFloat(params.subtasks.at(-1).index.toString().split('.')[1]) + 1) : parseFloat(params.index) + '.' + 1
