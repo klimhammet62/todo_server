@@ -1,0 +1,44 @@
+type Subtask {
+    id: ID
+    index: Float
+    title: String
+    completed: Boolean
+    size: String
+}
+
+input SubtaskInput {
+    id: String
+    index: Float
+    title: String
+    completed: Boolean
+    size: String
+}
+
+type Todo {
+    id: ID!
+    title: String!
+    completed: Boolean!
+    index: Int!
+    subtasks: [Subtask]
+}
+
+input TodoInput {
+    id: ID!
+    title: String!
+    completed: Boolean!
+}
+
+type Query {
+    getAllTodos: [Todo]
+    getTodo(id: ID!): Todo
+}
+
+type Mutation {
+    createTodo(id: ID!, title: String!, completed: Boolean!): Todo
+    createSubtask(index: Float!, subtasks: [SubtaskInput]): Boolean
+    removeTodo(id: ID!): [Todo]
+    removeSubtask(id: ID!): [Todo]
+    toggleCheckbox(id: ID!): Boolean
+    toggleSubtaskCheckbox(id: ID!): Boolean
+    removeAllTodos: Boolean
+}
